@@ -7,11 +7,24 @@ export default function BmiCalc(): JSX.Element {
   const [bmi, setBmi] = useState(undefined);
   const [weightPound, setWeightPound] = useState(undefined);
   const [heightFoot, setHeightFoot] = useState(undefined);
+  const [message, setMessage] = useState(undefined);
 
   const calculateBmi = (e: any): void => {
     e.preventDefault();
     if (weight && height) {
-      setBmi(weight / (height * height));
+      const result = weight / (height * height);
+      setBmi(result);
+      addMessage(result);
+    }
+  };
+
+  const addMessage = (bmi: number): void => {
+    if (bmi < 18.5) {
+      setMessage('You need more 🥟, 🍎, 🥔, 🍲 and 🍞');
+    } else if (bmi >= 18.5 && bmi < 25) {
+      setMessage('Your weight is perfect! 😉 ');
+    } else if (bmi >= 25) {
+      setMessage('You need more 🚴, 🏊, ⛷ and ⛹  ');
     }
   };
   const poundToKg = (e: any): void => {
@@ -30,14 +43,14 @@ export default function BmiCalc(): JSX.Element {
   };
 
   const mToFoot = (e: any): void => {
-    e.preventDefault();
     setHeight(e.target.value);
     setHeightFoot(e.target.value * 3.2808399);
   };
 
   return (
     <div className="container">
-      <h1> BMI = {bmi && bmi !== 0 ? bmi.toFixed(2) : ' '} </h1>
+      <h1> BMI = {bmi && bmi !== 0 ? bmi.toFixed(2) : ' '}</h1>
+      <p className="message">{message}</p>
       <form onSubmit={calculateBmi}>
         <div className="formPart">
           <p>
@@ -76,7 +89,7 @@ export default function BmiCalc(): JSX.Element {
           />
 
           <p>
-            Enter height in <strong> feets (ft)</strong>
+            Enter height in <strong> feet (ft)</strong>
           </p>
           <input
             type="number"

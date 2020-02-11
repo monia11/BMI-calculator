@@ -4,6 +4,9 @@ h1 {
   text-align: center;
   font-family: 'Inconsolata', monospace;
 }
+.message {
+  font-size: 24px;
+}
 
 body {
   background: rgb(9, 41, 121);
