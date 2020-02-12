@@ -1,6 +1,6 @@
 # BMI Calculator
 
-Body Mass Index calculator created with React.js
+Body Mass Index calculator with kilogram - pound and meter - foot conversion created with React.js.
 
 #### Demo
 
