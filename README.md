@@ -14,14 +14,32 @@ Body Mass Index calculator created with React.js
 git clone https://github.com/monia11/BMI-calculator.git
 ```
 
-##### 2. Install Node dependencies
+##### 2. Change directory
+
+```
+cd BMI-calculator
+```
+
+##### 3. Install Node dependencies
 
 ```
 npm install
 ```
 
-##### 3. Start the application
+or
+
+```
+yarn install
+```
+
+##### 4. Start the application
 
 ```
 npm start
+```
+
+or
+
+```
+yarn start
 ```
